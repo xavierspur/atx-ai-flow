@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, CheckCircle, Play } from "lucide-react";
+import { ArrowRight, Play, CheckCircle } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const HeroSection = () => {
@@ -18,12 +18,12 @@ const HeroSection = () => {
         </div>
 
         <h1 className="reveal text-4xl sm:text-5xl lg:text-6xl font-medium text-foreground leading-[1.1] max-w-4xl mx-auto text-balance">
-          Your entire business.{" "}
-          <span className="gradient-text font-semibold">Automated.</span>
+          AI automation for Texas businesses.{" "}
+          <span className="gradient-text font-semibold">Set up once, runs forever.</span>
         </h1>
 
         <p className="reveal mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed">
-          Tell us about your business — and our AI agents start running your marketing, sales, support, and operations automatically.
+          ATXDOES AI gives your business an always-on team of AI agents that handle marketing, sales, support, and operations — so you can focus on what you do best.
         </p>
 
         <div className="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

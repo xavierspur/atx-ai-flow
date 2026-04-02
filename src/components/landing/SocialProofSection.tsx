@@ -1,3 +1,5 @@
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+
 const testimonials = [
   {
     quote: "ATXDOES AI transformed how we handle leads. Our response time went from hours to seconds.",
@@ -19,23 +21,23 @@ const testimonials = [
 const logos = ["TechCrunch", "Forbes", "Inc.", "Wired", "Bloomberg", "Fast Company"];
 
 const SocialProofSection = () => {
+  const ref = useScrollReveal();
+
   return (
-    <section className="section-padding bg-section-alt">
+    <section className="section-padding bg-section-alt" ref={ref}>
       <div className="container-narrow mx-auto">
-        {/* Logos */}
         <div className="text-center mb-16">
-          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-6">Trusted by businesses featured in</p>
-          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
+          <p className="reveal text-xs font-semibold text-muted-foreground uppercase tracking-widest mb-6">Trusted by businesses featured in</p>
+          <div className="reveal flex flex-wrap items-center justify-center gap-8 lg:gap-12">
             {logos.map((logo) => (
-              <span key={logo} className="text-lg font-bold text-muted-foreground/40">{logo}</span>
+              <span key={logo} className="text-lg font-semibold text-muted-foreground/30">{logo}</span>
             ))}
           </div>
         </div>
 
-        {/* Testimonials */}
         <div className="grid md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <div key={t.name} className="glass-card p-6 rounded-xl">
+          {testimonials.map((t, i) => (
+            <div key={t.name} className="reveal glass-card p-6" style={{ transitionDelay: `${i * 100}ms` }}>
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <svg key={i} className="h-4 w-4 text-warning" fill="currentColor" viewBox="0 0 20 20">

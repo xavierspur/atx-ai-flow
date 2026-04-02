@@ -3,8 +3,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import Index from "./pages/Index.tsx";
-import NotFound from "./pages/NotFound.tsx";
+import Index from "./pages/Index";
+import NotFound from "./pages/NotFound";
+import Onboarding from "./pages/Onboarding";
+import Login from "./pages/Login";
+import DashboardLayout from "./components/dashboard/DashboardLayout";
+import DashboardHome from "./pages/DashboardHome";
+import BrowseAll from "./pages/BrowseAll";
+import MyAutomations from "./pages/MyAutomations";
+import DashboardSettings from "./pages/DashboardSettings";
+import DashboardHelp from "./pages/DashboardHelp";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +24,15 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<DashboardLayout />}>
+            <Route index element={<DashboardHome />} />
+            <Route path="browse" element={<BrowseAll />} />
+            <Route path="my-automations" element={<MyAutomations />} />
+            <Route path="settings" element={<DashboardSettings />} />
+            <Route path="help" element={<DashboardHelp />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

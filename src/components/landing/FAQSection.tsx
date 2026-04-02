@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: "How is this different from hiring a marketing agency?",
-    a: "Agencies cost $3,000–$10,000/month, take weeks to onboard, and stop working when the contract ends. ATXDOES AI costs a fraction of that, starts instantly, and runs 24/7 without breaks.",
+    a: "Agencies cost $3,000–$10,000/month, take weeks to onboard, and stop working when the contract ends. ATXDOES AI costs a fraction of that, starts instantly, and runs 24/7.",
   },
   {
     q: "Is my data secure?",
@@ -39,24 +39,26 @@ const FAQSection = () => {
   return (
     <section className="section-padding bg-background" ref={ref}>
       <div className="container-narrow mx-auto max-w-3xl">
-        <div className="text-center mb-12">
-          <p className="reveal text-sm font-semibold text-primary uppercase tracking-wider mb-3">FAQ</p>
-          <h2 className="reveal text-3xl sm:text-4xl font-medium text-foreground">Frequently asked questions</h2>
-        </div>
+        <p className="reveal font-body text-sm font-medium text-primary tracking-wide mb-6">FAQ</p>
+        <h2 className="reveal text-3xl sm:text-4xl font-normal text-foreground leading-snug mb-12">
+          Questions we hear often
+        </h2>
 
         <div className="reveal">
-          <Accordion type="single" collapsible className="space-y-3">
+          <Accordion type="single" collapsible className="space-y-2">
             {faqs.map((faq, i) => (
-              <AccordionItem key={i} value={`faq-${i}`} className="glass-card px-6 border-none">
-                <AccordionTrigger className="text-left font-medium text-foreground hover:no-underline py-5">
+              <AccordionItem key={i} value={`faq-${i}`} className="border-none">
+                <div className="thin-rule"></div>
+                <AccordionTrigger className="text-left font-serif font-normal text-foreground hover:no-underline py-5 text-base">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-5">
+                <AccordionContent className="font-body text-muted-foreground leading-relaxed pb-5">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>
+          <div className="thin-rule"></div>
         </div>
       </div>
     </section>

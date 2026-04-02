@@ -1,50 +1,61 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, Play, CheckCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const HeroSection = () => {
   const ref = useScrollReveal();
 
   return (
-    <section className="bg-hero section-padding" ref={ref}>
-      <div className="container-narrow mx-auto text-center">
-        <div className="reveal inline-flex items-center gap-2 rounded-pill bg-badge px-4 py-1.5 text-sm font-medium text-badge-foreground mb-8">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-          </span>
-          10,000+ automations available
-        </div>
+    <section className="section-padding bg-hero" ref={ref}>
+      <div className="container-narrow mx-auto">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+          {/* Main copy — 3 cols */}
+          <div className="lg:col-span-3">
+            <p className="reveal font-body text-sm font-medium text-primary tracking-wide mb-6">
+              AI automation for Texas businesses
+            </p>
 
-        <h1 className="reveal text-4xl sm:text-5xl lg:text-6xl font-medium text-foreground leading-[1.1] max-w-4xl mx-auto text-balance">
-          AI automation for Texas businesses.{" "}
-          <span className="gradient-text font-semibold">Set up once, runs forever.</span>
-        </h1>
+            <h1 className="reveal text-4xl sm:text-5xl lg:text-[3.5rem] font-normal text-foreground leading-[1.15] text-balance">
+              Your business, running{" "}
+              <em className="italic">while you sleep</em>
+            </h1>
 
-        <p className="reveal mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed">
-          ATXDOES AI gives your business an always-on team of AI agents that handle marketing, sales, support, and operations — so you can focus on what you do best.
-        </p>
+            <p className="reveal mt-6 text-lg text-muted-foreground leading-relaxed max-w-xl">
+              We set up AI agents that handle your marketing, follow-ups, reviews, and operations — so you can stop doing the work around your business and start doing the work in it.
+            </p>
 
-        <div className="reveal mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/onboarding">
-            <Button size="lg" className="text-base px-8 py-6 rounded-pill font-medium bg-primary hover:bg-primary/90">
-              Get instant access — free
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
-          <a href="#how-it-works">
-            <Button variant="outline" size="lg" className="text-base px-8 py-6 rounded-pill font-medium">
-              <Play className="mr-2 h-4 w-4" />
-              See how it works
-            </Button>
-          </a>
-        </div>
+            <div className="reveal mt-10 flex flex-col sm:flex-row items-start gap-4">
+              <Link to="/onboarding">
+                <Button size="lg" className="text-base px-8 py-6 rounded-pill font-body font-medium">
+                  Start free — takes 5 minutes
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <a href="#how-it-works">
+                <Button variant="ghost" size="lg" className="text-base px-6 py-6 font-body font-normal text-muted-foreground hover:text-foreground">
+                  See how it works ↓
+                </Button>
+              </a>
+            </div>
+          </div>
 
-        <div className="reveal mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
-          <span className="flex items-center gap-1.5"><CheckCircle className="h-4 w-4 text-success" /> No credit card required</span>
-          <span className="flex items-center gap-1.5"><CheckCircle className="h-4 w-4 text-success" /> Setup in under 5 minutes</span>
-          <span className="flex items-center gap-1.5"><CheckCircle className="h-4 w-4 text-success" /> Cancel anytime</span>
+          {/* Aside — quote + metric — 2 cols */}
+          <div className="lg:col-span-2 space-y-6">
+            <div className="reveal glass-card p-6">
+              <p className="font-serif italic text-foreground leading-relaxed text-lg mb-4">
+                "We activated 8 automations in one afternoon. Within 30 days our lead response time dropped from 6 hours to under 2 minutes."
+              </p>
+              <div className="thin-rule my-4"></div>
+              <p className="font-body text-sm font-medium text-foreground">James Rodriguez</p>
+              <p className="font-body text-xs text-muted-foreground">Owner, Rodriguez HVAC — San Antonio</p>
+            </div>
+
+            <div className="reveal glass-card p-6 text-center" style={{ transitionDelay: '100ms' }}>
+              <p className="text-4xl font-serif font-medium text-foreground">200+</p>
+              <p className="font-body text-sm text-muted-foreground mt-1">Texas businesses automated</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

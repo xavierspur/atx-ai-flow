@@ -1,24 +1,20 @@
-import { ClipboardList, Cpu, Rocket } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const steps = [
   {
-    icon: ClipboardList,
-    step: "01",
+    word: "one",
     title: "Tell us about your business",
-    description: "Answer a few simple questions about your industry, team size, and what you need help with.",
+    description: "A short conversation — your industry, your goals, where your time goes. No pitch. Just a map of where the bottlenecks are.",
   },
   {
-    icon: Cpu,
-    step: "02",
+    word: "two",
     title: "We match you with automations",
-    description: "Our AI engine selects the best workflows for your business type and goals instantly.",
+    description: "Our engine selects the workflows that actually fit your business type. Not a generic template — a tailored set of agents ready to work.",
   },
   {
-    icon: Rocket,
-    step: "03",
-    title: "Your AI agents start working",
-    description: "Automations go live immediately — generating leads, sending emails, managing reviews, and more.",
+    word: "three",
+    title: "Your AI agents start running",
+    description: "Leads get followed up. Reviews get answered. Emails go out. Reports land in your inbox. You focus on your craft.",
   },
 ];
 
@@ -26,22 +22,21 @@ const HowItWorksSection = () => {
   const ref = useScrollReveal();
 
   return (
-    <section id="how-it-works" className="section-padding bg-background" ref={ref}>
-      <div className="container-narrow mx-auto">
-        <div className="text-center mb-16">
-          <p className="reveal text-sm font-semibold text-primary uppercase tracking-wider mb-3">How it works</p>
-          <h2 className="reveal text-3xl sm:text-4xl font-medium text-foreground">Up and running in 3 simple steps</h2>
-        </div>
+    <section id="how-it-works" className="section-padding bg-section-alt" ref={ref}>
+      <div className="container-narrow mx-auto max-w-3xl">
+        <p className="reveal font-body text-sm font-medium text-primary tracking-wide mb-6">How it works</p>
+        <h2 className="reveal text-3xl sm:text-4xl font-normal text-foreground leading-snug">
+          Three steps. Five minutes. Done.
+        </h2>
 
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="mt-14 space-y-12">
           {steps.map((s, i) => (
-            <div key={s.step} className="reveal text-center" style={{ transitionDelay: `${i * 100}ms` }}>
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-badge text-primary mb-5">
-                <s.icon className="h-6 w-6" />
+            <div key={s.word} className="reveal flex items-start gap-8" style={{ transitionDelay: `${i * 80}ms` }}>
+              <p className="font-serif italic text-primary text-lg pt-0.5 shrink-0 w-12">{s.word}</p>
+              <div>
+                <h3 className="text-xl font-medium text-foreground mb-2">{s.title}</h3>
+                <p className="text-muted-foreground leading-relaxed">{s.description}</p>
               </div>
-              <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-2">Step {s.step}</p>
-              <h3 className="text-xl font-semibold text-foreground mb-2">{s.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">{s.description}</p>
             </div>
           ))}
         </div>

@@ -8,22 +8,22 @@ const CTASection = () => {
 
   return (
     <section className="section-padding bg-foreground" ref={ref}>
-      <div className="container-narrow mx-auto text-center">
-        <h2 className="reveal text-3xl sm:text-4xl font-medium text-background text-balance">
-          Ready to put your business on autopilot?
+      <div className="container-narrow mx-auto max-w-3xl text-center">
+        <h2 className="reveal text-3xl sm:text-4xl font-normal text-background leading-snug text-balance">
+          Ready to stop working <em className="italic">around</em> your business?
         </h2>
-        <p className="reveal mt-4 text-background/60 text-lg max-w-xl mx-auto">
-          Join hundreds of Texas businesses already saving 30+ hours a week with AI automation.
+        <p className="reveal mt-4 font-body text-background/50 text-lg">
+          Join hundreds of Texas businesses already saving 30+ hours a week.
         </p>
         <div className="reveal mt-8">
           <Link to="/onboarding">
-            <Button size="lg" className="text-base px-8 py-6 rounded-pill font-medium">
-              Get instant access — free
+            <Button size="lg" className="text-base px-8 py-6 rounded-pill font-body font-medium">
+              Start free — takes 5 minutes
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </Link>
         </div>
-        <p className="reveal mt-4 text-background/40 text-sm">No credit card required · Setup in under 5 minutes</p>
+        <p className="reveal mt-4 font-body text-background/30 text-sm">No credit card required · Cancel anytime</p>
       </div>
     </section>
   );

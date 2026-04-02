@@ -2,63 +2,60 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 @layer base {
   :root {
-    --background: 40 20% 96%;
-    --foreground: 240 10% 6%;
+    --background: 38 33% 97%;
+    --foreground: 240 6% 7%;
 
-    --card: 40 20% 98%;
-    --card-foreground: 240 10% 6%;
+    --card: 38 33% 98%;
+    --card-foreground: 240 6% 7%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 6%;
+    --popover: 38 33% 98%;
+    --popover-foreground: 240 6% 7%;
 
-    --primary: 239 84% 67%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 12 60% 48%;
+    --primary-foreground: 38 33% 97%;
 
-    --secondary: 40 14% 93%;
-    --secondary-foreground: 240 10% 6%;
+    --secondary: 38 20% 92%;
+    --secondary-foreground: 240 6% 7%;
 
-    --muted: 40 14% 93%;
-    --muted-foreground: 240 5% 46%;
+    --muted: 38 20% 92%;
+    --muted-foreground: 38 8% 46%;
 
-    --accent: 186 94% 42%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 12 60% 48%;
+    --accent-foreground: 38 33% 97%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 40 10% 90%;
-    --input: 40 10% 90%;
-    --ring: 239 84% 67%;
+    --border: 38 15% 88%;
+    --input: 38 15% 88%;
+    --ring: 12 60% 48%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
     /* Custom tokens */
-    --hero-bg: 40 20% 96%;
-    --section-alt: 40 14% 93%;
-    --nav-bg: 40 20% 98%;
-    --badge-bg: 239 84% 95%;
-    --badge-text: 239 84% 50%;
-    --success: 142 71% 45%;
+    --hero-bg: 38 33% 97%;
+    --section-alt: 38 25% 94%;
+    --nav-bg: 38 33% 97%;
+    --badge-bg: 12 60% 94%;
+    --badge-text: 12 60% 38%;
+    --success: 142 50% 40%;
     --success-foreground: 0 0% 100%;
-    --warning: 38 92% 50%;
+    --warning: 38 80% 50%;
     --warning-foreground: 0 0% 100%;
 
-    --sidebar-background: 240 10% 6%;
-    --sidebar-foreground: 240 5% 80%;
-    --sidebar-primary: 239 84% 67%;
+    --sidebar-background: 240 6% 7%;
+    --sidebar-foreground: 38 10% 75%;
+    --sidebar-primary: 12 60% 48%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 10% 12%;
+    --sidebar-accent: 240 6% 14%;
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 240 10% 15%;
-    --sidebar-ring: 239 84% 67%;
-    --sidebar-muted: 240 5% 40%;
-
-    /* Gradient tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(239 84% 67%), hsl(186 94% 42%));
+    --sidebar-border: 240 6% 16%;
+    --sidebar-ring: 12 60% 48%;
+    --sidebar-muted: 38 8% 46%;
   }
 }
 
@@ -68,11 +65,13 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 300;
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lora', Georgia, serif;
     @apply tracking-tight;
   }
 }
@@ -90,30 +89,40 @@
     text-wrap: balance;
   }
 
-  .gradient-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .font-body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+  }
+
+  .font-serif {
+    font-family: 'Lora', Georgia, serif;
   }
 }
 
 @layer components {
   .glass-card {
-    @apply bg-card border rounded-2xl shadow-sm hover:shadow-md transition-all duration-300;
-    border-color: hsl(var(--foreground) / 0.06);
+    @apply bg-card rounded-lg transition-all duration-300;
+    border: 0.5px solid hsl(var(--foreground) / 0.08);
+  }
+
+  .glass-card:hover {
+    border-color: hsl(var(--foreground) / 0.14);
   }
 
   .stat-card {
-    @apply bg-card rounded-2xl p-6 shadow-sm;
-    border: 0.5px solid hsl(var(--foreground) / 0.06);
+    @apply bg-card rounded-lg p-6;
+    border: 0.5px solid hsl(var(--foreground) / 0.08);
+  }
+
+  .thin-rule {
+    border: none;
+    border-top: 0.5px solid hsl(var(--foreground) / 0.1);
   }
 
   /* Scroll reveal animation */
   .reveal {
     opacity: 0;
     transform: translateY(12px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
   }
 
   .reveal.visible {

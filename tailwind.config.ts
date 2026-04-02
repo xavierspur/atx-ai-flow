@@ -77,9 +77,12 @@ export default {
         "section-alt": "hsl(var(--section-alt))",
       },
       borderRadius: {
+        "2xl": "1rem",
+        xl: "0.875rem",
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+        pill: "9999px",
       },
       keyframes: {
         "accordion-down": {

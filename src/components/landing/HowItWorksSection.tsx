@@ -1,4 +1,5 @@
 import { ClipboardList, Cpu, Rocket } from "lucide-react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const steps = [
   {
@@ -22,22 +23,24 @@ const steps = [
 ];
 
 const HowItWorksSection = () => {
+  const ref = useScrollReveal();
+
   return (
-    <section id="how-it-works" className="section-padding bg-background">
+    <section id="how-it-works" className="section-padding bg-background" ref={ref}>
       <div className="container-narrow mx-auto">
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-3">How It Works</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-foreground">Up and running in 3 simple steps</h2>
+          <p className="reveal text-sm font-semibold text-primary uppercase tracking-wider mb-3">How it works</p>
+          <h2 className="reveal text-3xl sm:text-4xl font-medium text-foreground">Up and running in 3 simple steps</h2>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-          {steps.map((s) => (
-            <div key={s.step} className="text-center">
-              <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-badge text-primary mb-5">
+          {steps.map((s, i) => (
+            <div key={s.step} className="reveal text-center" style={{ transitionDelay: `${i * 100}ms` }}>
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-badge text-primary mb-5">
                 <s.icon className="h-6 w-6" />
               </div>
-              <p className="text-xs font-bold text-primary uppercase tracking-widest mb-2">Step {s.step}</p>
-              <h3 className="text-xl font-bold text-foreground mb-2">{s.title}</h3>
+              <p className="text-xs font-semibold text-primary uppercase tracking-widest mb-2">Step {s.step}</p>
+              <h3 className="text-xl font-semibold text-foreground mb-2">{s.title}</h3>
               <p className="text-muted-foreground leading-relaxed">{s.description}</p>
             </div>
           ))}

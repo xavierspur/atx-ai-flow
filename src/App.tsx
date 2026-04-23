@@ -13,6 +13,7 @@ import BrowseAll from "./pages/BrowseAll";
 import MyAutomations from "./pages/MyAutomations";
 import DashboardSettings from "./pages/DashboardSettings";
 import DashboardHelp from "./pages/DashboardHelp";
+import Contact from "./pages/Contact";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<DashboardHome />} />
             <Route path="browse" element={<BrowseAll />} />

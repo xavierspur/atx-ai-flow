@@ -74,13 +74,13 @@ const PricingSection = () => {
           {plans.map((plan, i) => (
             <div
               key={plan.name}
-              className={`reveal bg-card p-8 flex flex-col ${
-                plan.popular ? "ring-1 ring-primary relative" : ""
+              className={`reveal p-8 flex flex-col relative ${
+                plan.popular ? "bg-card md:scale-[1.015] md:-my-px md:z-10 shadow-[0_8px_30px_-12px_hsl(var(--foreground)/0.12)]" : "bg-card"
               }`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               {plan.popular && (
-                <span className="absolute -top-px left-0 right-0 h-0.5 bg-primary rounded-t-lg"></span>
+                <span className="absolute top-0 left-0 right-0 h-1 bg-primary"></span>
               )}
               <div className="mb-6">
                 <p className="font-body text-xs font-medium text-primary uppercase tracking-wider mb-3">

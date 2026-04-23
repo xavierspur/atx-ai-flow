@@ -8,7 +8,7 @@ const CaseStudySection = () => {
     <section className="section-padding bg-section-alt" ref={ref}>
       <div className="container-narrow mx-auto max-w-4xl">
         <p className="reveal font-body text-sm font-medium text-primary tracking-wide mb-6">Case study</p>
-        <h2 className="reveal text-3xl sm:text-4xl font-normal text-foreground leading-snug mb-12">
+        <h2 className="reveal text-3xl sm:text-4xl lg:text-5xl font-normal text-foreground leading-[1.1] tracking-tight mb-10 text-balance">
           Real results from a real business
         </h2>
 
@@ -25,7 +25,7 @@ const CaseStudySection = () => {
               <p className="font-body text-sm text-muted-foreground">Owner, Rodriguez HVAC — San Antonio, TX</p>
             </div>
 
-            <div className="flex gap-8">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 sm:flex">
               <div className="text-center">
                 <p className="text-2xl font-serif font-medium text-foreground">340%</p>
                 <p className="font-body text-xs text-muted-foreground mt-0.5">more leads</p>

@@ -52,6 +52,19 @@ const Contact = () => {
 
             <div>
               <p className="font-body text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                Phone
+              </p>
+              <a
+                href={`tel:${CONTACT_PHONE_HREF}`}
+                className="inline-flex items-center gap-3 font-serif text-2xl sm:text-3xl text-foreground hover:text-primary transition-colors"
+              >
+                <Phone className="h-5 w-5" />
+                {CONTACT_PHONE_DISPLAY}
+              </a>
+            </div>
+
+            <div>
+              <p className="font-body text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
                 Based in
               </p>
               <p className="font-body text-base text-foreground">

@@ -19,6 +19,12 @@ const Footer = () => {
             >
               xaviercamacho@atxdoesai.com
             </a>
+            <a
+              href="tel:+12109758369"
+              className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors mt-1 block"
+            >
+              +1 (210) 975-8369
+            </a>
           </div>
           <div>
             <h4 className="font-body font-medium text-foreground mb-4 text-sm">Product</h4>

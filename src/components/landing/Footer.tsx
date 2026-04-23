@@ -13,6 +13,12 @@ const Footer = () => {
             <p className="font-body text-sm text-muted-foreground leading-relaxed mt-3">
               AI-powered automation for Texas businesses. Set it up once — let it run.
             </p>
+            <a
+              href="mailto:xaviercamacho@atxdoesai.com"
+              className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors mt-3 inline-block"
+            >
+              xaviercamacho@atxdoesai.com
+            </a>
           </div>
           <div>
             <h4 className="font-body font-medium text-foreground mb-4 text-sm">Product</h4>
@@ -35,7 +41,7 @@ const Footer = () => {
             <ul className="space-y-2 font-body text-sm text-muted-foreground">
               <li><a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Contact</a></li>
+              <li><a href="mailto:xaviercamacho@atxdoesai.com" className="hover:text-foreground transition-colors">Contact</a></li>
             </ul>
           </div>
         </div>

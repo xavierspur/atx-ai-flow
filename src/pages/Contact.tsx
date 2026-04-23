@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
-import { Mail, ArrowLeft } from "lucide-react";
+import { Mail, Phone, ArrowLeft } from "lucide-react";
 
 const CONTACT_EMAIL = "xaviercamacho@atxdoesai.com";
+const CONTACT_PHONE_DISPLAY = "+1 (210) 975-8369";
+const CONTACT_PHONE_HREF = "+12109758369";
 
 const Contact = () => {
   return (
@@ -45,6 +47,19 @@ const Contact = () => {
               >
                 <Mail className="h-5 w-5" />
                 {CONTACT_EMAIL}
+              </a>
+            </div>
+
+            <div>
+              <p className="font-body text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">
+                Phone
+              </p>
+              <a
+                href={`tel:${CONTACT_PHONE_HREF}`}
+                className="inline-flex items-center gap-3 font-serif text-2xl sm:text-3xl text-foreground hover:text-primary transition-colors"
+              >
+                <Phone className="h-5 w-5" />
+                {CONTACT_PHONE_DISPLAY}
               </a>
             </div>
 

@@ -16,13 +16,15 @@ const FounderSection = () => {
           <div className="thin-rule my-8"></div>
 
           <div className="flex items-center gap-5">
-            <div className="shrink-0 w-14 h-14 rounded-full bg-section-alt flex items-center justify-center font-serif text-xl text-foreground">
-              {/* Replace with: <img src="/founder.jpg" alt="Founder" className="w-14 h-14 rounded-full object-cover" /> */}
-              A
+            <div
+              className="shrink-0 w-14 h-14 rounded-full bg-primary/10 ring-1 ring-primary/20 flex items-center justify-center font-serif text-xl text-primary"
+              aria-hidden="true"
+            >
+              X
             </div>
             <div>
-              <p className="font-body font-medium text-foreground">Founder, ATXDOES AI</p>
-              <p className="font-body text-sm text-muted-foreground">Austin, TX — Helping 200+ businesses automate their operations</p>
+              <p className="font-body font-medium text-foreground">Xavier Camacho</p>
+              <p className="font-body text-sm text-muted-foreground">Founder, ATXDOES AI — Austin, TX</p>
             </div>
           </div>
         </div>

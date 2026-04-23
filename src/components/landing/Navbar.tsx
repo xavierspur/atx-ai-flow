@@ -28,7 +28,12 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <button className="md:hidden" onClick={() => setMobileOpen(!mobileOpen)}>
+        <button
+          className="md:hidden p-2 -mr-2 text-foreground"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+        >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
@@ -36,15 +41,14 @@ const Navbar = () => {
       <div className="thin-rule"></div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-background px-4 py-4 space-y-3">
-          <a href="#features" className="block font-body text-sm text-muted-foreground" onClick={() => setMobileOpen(false)}>Features</a>
-          <a href="#how-it-works" className="block font-body text-sm text-muted-foreground" onClick={() => setMobileOpen(false)}>How it works</a>
-          <a href="#pricing" className="block font-body text-sm text-muted-foreground" onClick={() => setMobileOpen(false)}>Pricing</a>
-          <div className="pt-3 space-y-2">
-            <Link to="/login"><Button variant="outline" className="w-full rounded-pill font-body" size="sm">Log in</Button></Link>
-            <Link to="/onboarding"><Button className="w-full rounded-pill font-body" size="sm">Get started</Button></Link>
+        <div className="md:hidden bg-background px-4 py-4 space-y-1 animate-fade-in">
+          <a href="#features" className="block font-body text-sm text-foreground py-3 border-b border-foreground/5" onClick={() => setMobileOpen(false)}>Features</a>
+          <a href="#how-it-works" className="block font-body text-sm text-foreground py-3 border-b border-foreground/5" onClick={() => setMobileOpen(false)}>How it works</a>
+          <a href="#pricing" className="block font-body text-sm text-foreground py-3 border-b border-foreground/5" onClick={() => setMobileOpen(false)}>Pricing</a>
+          <div className="pt-4 space-y-2">
+            <Link to="/login" onClick={() => setMobileOpen(false)}><Button variant="outline" className="w-full rounded-pill font-body" size="sm">Log in</Button></Link>
+            <Link to="/onboarding" onClick={() => setMobileOpen(false)}><Button className="w-full rounded-pill font-body" size="sm">Get started</Button></Link>
           </div>
-          <div className="thin-rule"></div>
         </div>
       )}
     </nav>

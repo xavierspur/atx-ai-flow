@@ -14,7 +14,7 @@ const ProblemSection = () => {
     <section className="section-padding bg-background" ref={ref}>
       <div className="container-narrow mx-auto max-w-3xl">
         <p className="reveal font-body text-sm font-medium text-primary tracking-wide mb-6">The problem</p>
-        <h2 className="reveal text-3xl sm:text-4xl font-normal text-foreground leading-snug text-balance">
+        <h2 className="reveal text-3xl sm:text-4xl lg:text-5xl font-normal text-foreground leading-[1.1] tracking-tight text-balance">
           You didn't start a business to spend all day on <em className="italic">busywork</em>
         </h2>
         <p className="reveal mt-6 text-lg text-muted-foreground leading-relaxed">

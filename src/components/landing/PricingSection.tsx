@@ -1,13 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const plans = [
   {
     name: "Starter",
-    price: "$297",
-    description: "For solopreneurs and small teams getting started with automation.",
+    tagline: "For solopreneurs and small teams getting started with automation.",
     features: [
       "Up to 5 active automations",
       "AI Chatbot",
@@ -16,13 +15,11 @@ const plans = [
       "Basic analytics",
       "Email support",
     ],
-    cta: "Get started",
     popular: false,
   },
   {
     name: "Growth",
-    price: "$597",
-    description: "For growing businesses that want AI across every channel.",
+    tagline: "For growing businesses that want AI across every channel.",
     features: [
       "Up to 15 active automations",
       "Everything in Starter",
@@ -32,13 +29,11 @@ const plans = [
       "Priority support",
       "Custom branding",
     ],
-    cta: "Get started",
     popular: true,
   },
   {
     name: "Enterprise",
-    price: "$1,497",
-    description: "For established businesses and agencies that need unlimited scale.",
+    tagline: "For established businesses and agencies that need unlimited scale.",
     features: [
       "Unlimited automations",
       "Everything in Growth",
@@ -48,7 +43,6 @@ const plans = [
       "White-label options",
       "SLA guarantee",
     ],
-    cta: "Contact sales",
     popular: false,
   },
 ];
@@ -60,17 +54,29 @@ const PricingSection = () => {
     <section id="pricing" className="section-padding bg-section-alt" ref={ref}>
       <div className="container-narrow mx-auto">
         <div className="max-w-2xl mb-14">
-          <p className="reveal font-body text-sm font-medium text-primary tracking-wide mb-6">Pricing</p>
-          <h2 className="reveal text-3xl sm:text-4xl font-normal text-foreground leading-snug">
-            Simple, transparent, cancel anytime
+          <p className="reveal font-body text-sm font-medium text-primary tracking-wide mb-6">
+            Pricing
+          </p>
+          <h2 className="reveal font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-foreground leading-[1.1] tracking-tight">
+            Built around your business — not a price sheet.
           </h2>
+          <p className="reveal font-body font-light text-base sm:text-lg text-muted-foreground leading-relaxed mt-6">
+            Every business runs differently. We tailor the right mix of
+            automations, integrations, and support to what you actually need —
+            then quote a flat monthly rate. No surprise tiers, no per-seat math.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden" style={{ border: '0.5px solid hsl(var(--foreground) / 0.08)' }}>
+        <div
+          className="grid md:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden"
+          style={{ border: "0.5px solid hsl(var(--foreground) / 0.08)" }}
+        >
           {plans.map((plan, i) => (
             <div
               key={plan.name}
-              className={`reveal bg-card p-8 flex flex-col ${plan.popular ? "ring-1 ring-primary relative" : ""}`}
+              className={`reveal bg-card p-8 flex flex-col ${
+                plan.popular ? "ring-1 ring-primary relative" : ""
+              }`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
               {plan.popular && (
@@ -78,38 +84,66 @@ const PricingSection = () => {
               )}
               <div className="mb-6">
                 <p className="font-body text-xs font-medium text-primary uppercase tracking-wider mb-3">
-                  {plan.popular ? "Most popular" : plan.name}
+                  {plan.popular ? "Most popular" : "Plan"}
                 </p>
-                {!plan.popular && <p className="font-body text-sm text-muted-foreground sr-only">{plan.name}</p>}
-                <h3 className="text-lg font-medium text-foreground">{plan.name}</h3>
+                <h3 className="font-serif text-2xl font-medium text-foreground">
+                  {plan.name}
+                </h3>
               </div>
 
-              <div className="flex items-baseline gap-1 mb-3">
-                <span className="text-3xl font-serif font-medium text-foreground">{plan.price}</span>
-                <span className="font-body text-sm text-muted-foreground">/mo</span>
+              <div className="flex items-baseline gap-2 mb-3">
+                <span className="font-serif text-3xl font-medium text-foreground">
+                  Custom
+                </span>
+                <span className="font-body text-sm text-muted-foreground">
+                  quote
+                </span>
               </div>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-8">{plan.description}</p>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-8">
+                {plan.tagline}
+              </p>
 
               <ul className="space-y-3 flex-1 mb-8">
                 {plan.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5 font-body text-sm text-foreground">
+                  <li
+                    key={f}
+                    className="flex items-start gap-2.5 font-body text-sm text-foreground"
+                  >
                     <Check className="h-4 w-4 mt-0.5 shrink-0 text-primary" />
                     <span>{f}</span>
                   </li>
                 ))}
               </ul>
 
-              <Link to="/onboarding">
+              <Link to="/contact">
                 <Button
-                  className={`w-full rounded-pill font-body ${plan.popular ? "" : ""}`}
+                  className="w-full rounded-pill font-body"
                   variant={plan.popular ? "default" : "outline"}
                   size="lg"
                 >
-                  {plan.cta}
+                  Contact us
                 </Button>
               </Link>
             </div>
           ))}
+        </div>
+
+        <div className="reveal mt-12 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 p-8 rounded-2xl border border-foreground/10 bg-card">
+          <div>
+            <h3 className="font-serif text-xl sm:text-2xl font-medium text-foreground">
+              Not sure where to start?
+            </h3>
+            <p className="font-body font-light text-sm sm:text-base text-muted-foreground mt-2 max-w-xl leading-relaxed">
+              Tell us about your business and we'll recommend the right setup —
+              and a flat monthly price — within one business day.
+            </p>
+          </div>
+          <Link to="/contact" className="shrink-0">
+            <Button size="lg" className="rounded-pill font-body group">
+              Talk to us
+              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

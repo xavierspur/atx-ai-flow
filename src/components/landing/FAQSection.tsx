@@ -39,9 +39,9 @@ const FAQSection = () => {
   return (
     <section className="section-padding bg-background" ref={ref}>
       <div className="container-narrow mx-auto max-w-3xl">
-        <p className="reveal font-body text-sm font-medium text-primary tracking-wide mb-6">FAQ</p>
-        <h2 className="reveal text-3xl sm:text-4xl lg:text-5xl font-normal text-foreground leading-[1.1] tracking-tight mb-10 text-balance">
-          Questions we hear often
+        <p className="reveal font-body text-xs font-semibold text-muted-foreground uppercase tracking-[0.2em] mb-8">FAQ</p>
+        <h2 className="reveal display-headline text-4xl sm:text-5xl lg:text-6xl mb-12 text-balance">
+          Questions, <span className="highlight-accent">answered.</span>
         </h2>
 
         <div className="reveal">

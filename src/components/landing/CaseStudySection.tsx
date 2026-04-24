@@ -7,9 +7,9 @@ const CaseStudySection = () => {
   return (
     <section className="section-padding bg-section-alt" ref={ref}>
       <div className="container-narrow mx-auto max-w-4xl">
-        <p className="reveal font-body text-sm font-medium text-primary tracking-wide mb-6">Case study</p>
-        <h2 className="reveal text-3xl sm:text-4xl lg:text-5xl font-normal text-foreground leading-[1.1] tracking-tight mb-10 text-balance">
-          Real results from a real business
+        <p className="reveal font-body text-xs font-semibold text-muted-foreground uppercase tracking-[0.2em] mb-8">Case study</p>
+        <h2 className="reveal display-headline text-4xl sm:text-5xl lg:text-6xl mb-12 text-balance">
+          Real <span className="highlight-accent">results.</span> Real business.
         </h2>
 
         <div className="reveal">

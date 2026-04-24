@@ -7,6 +7,17 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>() {
     const el = ref.current;
     if (!el) return;
 
+    // Respect reduced motion + browsers without IntersectionObserver
+    const prefersReduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    const targets: Element[] = [];
+    el.querySelectorAll(".reveal").forEach((c) => targets.push(c));
+    if (el.classList.contains("reveal")) targets.push(el);
+
+    if (prefersReduced || typeof IntersectionObserver === "undefined") {
+      targets.forEach((t) => t.classList.add("visible"));
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -16,15 +27,28 @@ export function useScrollReveal<T extends HTMLElement = HTMLDivElement>() {
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.01, rootMargin: "0px 0px -5% 0px" }
     );
 
-    // Observe the element itself and any children with .reveal
-    const children = el.querySelectorAll(".reveal");
-    children.forEach((child) => observer.observe(child));
-    if (el.classList.contains("reveal")) observer.observe(el);
+    targets.forEach((t) => {
+      // If already in viewport on mount, reveal immediately (no flash)
+      const rect = t.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        t.classList.add("visible");
+      } else {
+        observer.observe(t);
+      }
+    });
 
-    return () => observer.disconnect();
+    // Safety net: ensure nothing stays hidden forever
+    const fallback = window.setTimeout(() => {
+      targets.forEach((t) => t.classList.add("visible"));
+    }, 2500);
+
+    return () => {
+      observer.disconnect();
+      window.clearTimeout(fallback);
+    };
   }, []);
 
   return ref;

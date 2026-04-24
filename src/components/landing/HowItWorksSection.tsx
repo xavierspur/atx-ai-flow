@@ -23,24 +23,24 @@ const HowItWorksSection = () => {
 
   return (
     <section id="how-it-works" className="section-padding bg-section-alt" ref={ref}>
-      <div className="container-narrow mx-auto max-w-3xl">
-        <p className="reveal font-body text-sm font-medium text-primary tracking-wide mb-6">How it works</p>
-        <h2 className="reveal text-3xl sm:text-4xl lg:text-5xl font-normal text-foreground leading-[1.1] tracking-tight text-balance">
-          Three steps. Five minutes. Done.
+      <div className="container-narrow mx-auto max-w-4xl">
+        <p className="reveal font-body text-xs font-semibold text-muted-foreground uppercase tracking-[0.2em] mb-8">How it works</p>
+        <h2 className="reveal display-headline text-4xl sm:text-5xl lg:text-6xl text-balance">
+          Three steps. <span className="highlight-accent">Five minutes.</span> Done.
         </h2>
-        <p className="reveal font-body font-light text-base sm:text-lg text-muted-foreground leading-relaxed mt-6 max-w-2xl">
+        <p className="reveal font-body text-base sm:text-lg text-muted-foreground leading-relaxed mt-8 max-w-2xl">
           No contracts, no consultants, no setup fees. Just a quick conversation and a working set of agents.
         </p>
 
-        <div className="mt-14 space-y-10 sm:space-y-12">
+        <div className="mt-16 space-y-12">
           {steps.map((s, i) => (
-            <div key={s.word} className="reveal flex items-start gap-6 sm:gap-8" style={{ transitionDelay: `${i * 80}ms` }}>
-              <p className="font-serif italic text-primary text-lg pt-1 shrink-0 w-10 sm:w-12 border-t border-primary/30">
-                <span className="block pt-3">{s.word}</span>
+            <div key={s.word} className="reveal grid grid-cols-[auto_1fr] gap-6 sm:gap-10 items-start pt-8 border-t border-foreground/10" style={{ transitionDelay: `${i * 80}ms` }}>
+              <p className="font-serif text-foreground/30 text-3xl sm:text-4xl tabular-nums">
+                0{i + 1}
               </p>
               <div>
-                <h3 className="font-serif text-xl sm:text-2xl font-medium text-foreground mb-2">{s.title}</h3>
-                <p className="font-body text-muted-foreground leading-relaxed">{s.description}</p>
+                <h3 className="font-body uppercase tracking-wide text-base sm:text-lg font-semibold text-foreground mb-3">{s.title}</h3>
+                <p className="font-body text-muted-foreground leading-relaxed max-w-xl">{s.description}</p>
               </div>
             </div>
           ))}

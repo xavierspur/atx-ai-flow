@@ -53,12 +53,12 @@ const PricingSection = () => {
   return (
     <section id="pricing" className="section-padding bg-section-alt" ref={ref}>
       <div className="container-narrow mx-auto">
-        <div className="max-w-2xl mb-14">
-          <p className="reveal font-body text-sm font-medium text-primary tracking-wide mb-6">
+        <div className="max-w-3xl mb-14">
+          <p className="reveal font-body text-xs font-semibold text-muted-foreground uppercase tracking-[0.2em] mb-8">
             Pricing
           </p>
-          <h2 className="reveal font-serif text-3xl sm:text-4xl lg:text-5xl font-medium text-foreground leading-[1.1] tracking-tight">
-            Built around your business — not a price sheet.
+          <h2 className="reveal display-headline text-4xl sm:text-5xl lg:text-6xl text-balance">
+            Built around <span className="highlight-accent">your business.</span>
           </h2>
           <p className="reveal font-body font-light text-base sm:text-lg text-muted-foreground leading-relaxed mt-6">
             Every business runs differently. We tailor the right mix of

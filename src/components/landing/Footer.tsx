@@ -7,8 +7,8 @@ const Footer = () => {
       <div className="container-narrow mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <Link to="/" className="font-serif text-lg font-medium text-foreground tracking-tight">
-              ATXDOES AI
+            <Link to="/" className="font-serif text-base font-bold uppercase tracking-tight text-foreground">
+              ATXDOES <span className="highlight-accent">AI</span>
             </Link>
             <p className="font-body text-sm text-muted-foreground leading-relaxed mt-3">
               AI-powered automation for Texas businesses. Set it up once — let it run.
@@ -27,7 +27,7 @@ const Footer = () => {
             </a>
           </div>
           <div>
-            <h4 className="font-body font-medium text-foreground mb-4 text-sm">Product</h4>
+            <h4 className="font-body font-semibold uppercase tracking-[0.15em] text-foreground mb-4 text-xs">Product</h4>
             <ul className="space-y-2 font-body text-sm text-muted-foreground">
               <li><a href="#features" className="hover:text-foreground transition-colors">Features</a></li>
               <li><a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a></li>
@@ -35,7 +35,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-body font-medium text-foreground mb-4 text-sm">Company</h4>
+            <h4 className="font-body font-semibold uppercase tracking-[0.15em] text-foreground mb-4 text-xs">Company</h4>
             <ul className="space-y-2 font-body text-sm text-muted-foreground">
               <li><a href="#" className="hover:text-foreground transition-colors">About</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Blog</a></li>
@@ -43,7 +43,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-body font-medium text-foreground mb-4 text-sm">Legal</h4>
+            <h4 className="font-body font-semibold uppercase tracking-[0.15em] text-foreground mb-4 text-xs">Legal</h4>
             <ul className="space-y-2 font-body text-sm text-muted-foreground">
               <li><a href="#" className="hover:text-foreground transition-colors">Privacy Policy</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Terms of Service</a></li>

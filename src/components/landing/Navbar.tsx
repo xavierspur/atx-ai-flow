@@ -1,13 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85 border-b border-foreground/10">
+    <nav
+      className={`sticky top-0 z-50 transition-colors duration-200 ${
+        scrolled
+          ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/85 border-b border-foreground/10"
+          : "bg-background border-b border-transparent"
+      }`}
+    >
       <div className="container-narrow mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link to="/" className="font-serif text-base font-bold uppercase tracking-tight text-foreground">
           ATXDOES <span className="highlight-accent">AI</span>

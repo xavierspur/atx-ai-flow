@@ -85,7 +85,6 @@
     text-transform: uppercase;
     letter-spacing: -0.01em;
     line-height: 0.98;
-    color: hsl(var(--foreground));
   }
 
   /* Yellow highlight on key phrase — like the reference's "BY AI." */

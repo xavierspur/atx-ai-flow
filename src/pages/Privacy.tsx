@@ -4,6 +4,7 @@ import Footer from "@/components/landing/Footer";
 import { ArrowLeft } from "lucide-react";
 
 const LAST_UPDATED = "April 27, 2026";
+const CONTACT_EMAIL = "xaviercamacho@atxdoesai.com";
 
 const Privacy = () => {
   return (
@@ -33,65 +34,134 @@ const Privacy = () => {
 
           <div className="space-y-10 font-body text-base text-foreground/85 leading-relaxed max-w-3xl">
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">1. Who we are</h2>
-              <p>
-                ATXDOES AI ("we", "us", "our") is an automation platform based in
-                Austin, Texas. This policy describes how we collect, use, and
-                protect your information when you use our website and services.
+              <p className="italic text-muted-foreground">
+                ATXDOES AI is a self-serve AI automation platform for business
+                owners, based in Austin, Texas. We take privacy seriously
+                because the automations you build often touch your customers,
+                your inbox, and your operations. This page explains, in plain
+                English, what we collect and what we do with it.
               </p>
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">2. Information we collect</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">1. Who we are</h2>
+              <p>
+                "ATXDOES AI", "we", "us", and "our" refer to ATXDOES AI, an
+                Austin, Texas–based company operating the website at
+                atxdoesai.com and the related dashboard, onboarding flow, and
+                automation tools (together, the "Service").
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-2xl text-foreground mb-3">2. Information you give us</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><span className="font-medium">Account data:</span> name, email, business name, and role you provide during onboarding.</li>
-                <li><span className="font-medium">Usage data:</span> pages visited, features used, and device or browser metadata.</li>
-                <li><span className="font-medium">Automation data:</span> content you connect or feed into automations you set up.</li>
-                <li><span className="font-medium">Communications:</span> messages you send us via email, forms, or phone.</li>
+                <li><span className="font-medium">Account & onboarding:</span> name, email, business name, industry, team size, location, and the goals you share in our 4-step onboarding flow so we can personalize your dashboard.</li>
+                <li><span className="font-medium">Automation inputs:</span> the prompts, documents, contact lists, customer messages, and other content you connect to or feed into the automations you set up.</li>
+                <li><span className="font-medium">Third-party connections:</span> credentials and tokens you authorize for tools like email, CRMs, calendars, or messaging apps. We store only what is needed to run your automations.</li>
+                <li><span className="font-medium">Billing:</span> for paid plans, payment details are processed by our payment processor; we store limited records (plan, last 4 digits, invoices).</li>
+                <li><span className="font-medium">Support:</span> messages you send to <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">{CONTACT_EMAIL}</a> or via our contact page.</li>
               </ul>
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">3. How we use your information</h2>
-              <p>We use your information to operate the service, personalize your dashboard, run the automations you configure, respond to support requests, improve our product, and meet legal obligations.</p>
+              <h2 className="font-serif text-2xl text-foreground mb-3">3. Information we collect automatically</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                <li><span className="font-medium">Usage:</span> pages viewed, automations browsed, features used, errors encountered.</li>
+                <li><span className="font-medium">Device:</span> browser, OS, device type, approximate location from IP, language.</li>
+                <li><span className="font-medium">Cookies:</span> essential cookies for login and session, plus limited analytics cookies to understand how the Service is used.</li>
+              </ul>
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">4. Sharing</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">4. How we use your information</h2>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Run, maintain, and personalize your dashboard and automations.</li>
+                <li>Generate AI outputs through our model providers based on the inputs you submit.</li>
+                <li>Process payments, prevent fraud, and enforce our Terms.</li>
+                <li>Send transactional messages (account, billing, security) and, only with your consent, occasional product updates.</li>
+                <li>Improve the Service through aggregated and de-identified analytics. We do not train foundation models on your private data.</li>
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-2xl text-foreground mb-3">5. AI processing</h2>
               <p>
-                We do not sell your personal information. We share data only with
-                trusted service providers (hosting, analytics, AI infrastructure)
-                who process it on our behalf, or when required by law.
+                When you run an automation, your inputs may be sent to third-party
+                AI providers (such as large language model APIs) strictly to
+                generate the output you requested. We use providers that contractually
+                agree not to use your content to train their public models. Outputs
+                may be inaccurate — always review before acting on them in
+                customer-facing or financial workflows.
               </p>
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">5. Data retention</h2>
-              <p>We retain your information for as long as your account is active or as needed to provide the service. You can request deletion at any time.</p>
+              <h2 className="font-serif text-2xl text-foreground mb-3">6. Sharing</h2>
+              <p>We do not sell your personal information. We share data only with:</p>
+              <ul className="list-disc pl-6 space-y-2 mt-3">
+                <li><span className="font-medium">Infrastructure providers:</span> hosting, database, authentication, and storage (e.g., Supabase, cloud hosting).</li>
+                <li><span className="font-medium">AI providers:</span> to generate the automation outputs you request.</li>
+                <li><span className="font-medium">Tools you connect:</span> only the data needed to perform the action you authorized.</li>
+                <li><span className="font-medium">Legal:</span> when required by law, subpoena, or to protect rights and safety.</li>
+                <li><span className="font-medium">Business transfers:</span> in connection with a merger, acquisition, or sale of assets, with notice to you.</li>
+              </ul>
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">6. Your rights</h2>
-              <p>Depending on your location, you may have the right to access, correct, export, or delete your personal data. Contact us to exercise any of these rights.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">7. Security</h2>
-              <p>We use industry-standard safeguards to protect your data. No system is perfectly secure, but we work to minimize risk and notify you of material incidents.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">8. Changes</h2>
-              <p>We may update this policy from time to time. Significant changes will be communicated through the product or by email.</p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">9. Contact</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">7. Data retention</h2>
               <p>
-                Questions about this policy? Email{" "}
-                <a href="mailto:xaviercamacho@atxdoesai.com" className="underline hover:text-primary transition-colors">
-                  xaviercamacho@atxdoesai.com
-                </a>.
+                We retain account and automation data while your account is
+                active. You can delete individual automations at any time from
+                your dashboard. If you close your account, we delete or
+                de-identify your personal data within 90 days, except where we
+                are required to keep records (e.g., tax, fraud prevention).
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-2xl text-foreground mb-3">8. Your rights</h2>
+              <p>
+                Depending on where you live (including Texas residents under the
+                Texas Data Privacy and Security Act, and residents of other US
+                states or the EU/UK), you may have the right to access, correct,
+                export, or delete your personal data, and to opt out of certain
+                processing. Email{" "}
+                <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">
+                  {CONTACT_EMAIL}
+                </a>{" "}
+                and we will respond within 45 days.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-2xl text-foreground mb-3">9. Security</h2>
+              <p>
+                We use encryption in transit (TLS), encryption at rest for
+                sensitive fields, role-based access controls, and audit logs.
+                No system is perfectly secure — if we discover a material
+                breach affecting your data, we will notify you promptly.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-2xl text-foreground mb-3">10. Children</h2>
+              <p>The Service is built for business owners and is not directed to anyone under 18. We do not knowingly collect data from children.</p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-2xl text-foreground mb-3">11. Changes</h2>
+              <p>We may update this policy as the Service evolves. Material changes will be announced in the dashboard or by email at least 14 days before they take effect.</p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-2xl text-foreground mb-3">12. Contact</h2>
+              <p>
+                Questions, requests, or concerns? Email{" "}
+                <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">
+                  {CONTACT_EMAIL}
+                </a>{" "}
+                or call +1 (210) 975-8369. We're based in Austin, Texas.
               </p>
             </section>
           </div>

@@ -3,7 +3,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { ArrowLeft } from "lucide-react";
 
-const LAST_UPDATED = "April 27, 2026";
+const LAST_UPDATED = "April 28, 2026";
 const CONTACT_EMAIL = "xaviercamacho@atxdoesai.com";
 
 const Privacy = () => {
@@ -106,6 +106,9 @@ const Privacy = () => {
                 <li><span className="font-medium">Legal:</span> when required by law, subpoena, or to protect rights and safety.</li>
                 <li><span className="font-medium">Business transfers:</span> in connection with a merger, acquisition, or sale of assets, with notice to you.</li>
               </ul>
+              <p className="mt-6 text-sm text-muted-foreground border-l-2 border-primary/20 pl-4 py-1">
+                No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. All the categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+              </p>
             </section>
 
             <section>

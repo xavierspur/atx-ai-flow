@@ -3,7 +3,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { ArrowLeft } from "lucide-react";
 
-const LAST_UPDATED = "April 27, 2026";
+const LAST_UPDATED = "April 28, 2026";
 const CONTACT_EMAIL = "xaviercamacho@atxdoesai.com";
 
 const Terms = () => {
@@ -188,7 +188,20 @@ const Terms = () => {
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">16. Contact</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">16. SMS Communications</h2>
+              <p>
+                <span className="font-medium">Program:</span> ATX Does AI customer SMS.
+              </p>
+              <p className="mt-2">
+                <span className="font-medium">Description:</span> Appointment confirmations, reminders, customer support replies, and project updates.
+              </p>
+              <p className="mt-2">
+                Message frequency varies. Message and data rates may apply. For help, reply HELP or email <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">{CONTACT_EMAIL}</a>. To opt out, reply STOP at any time.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-2xl text-foreground mb-3">17. Contact</h2>
               <p>
                 Questions about these Terms? Email{" "}
                 <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">

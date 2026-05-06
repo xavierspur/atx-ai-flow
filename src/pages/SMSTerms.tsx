@@ -4,7 +4,7 @@ import Footer from "@/components/landing/Footer";
 import { ArrowLeft } from "lucide-react";
 
 const LAST_UPDATED = "May 6, 2026";
-const CONTACT_EMAIL = "support@atxdoesai.com";
+const CONTACT_EMAIL = "xaviercamacho@atxdoesai.com";
 
 const SMSTerms = () => {
   return (

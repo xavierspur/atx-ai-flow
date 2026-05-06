@@ -3,7 +3,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { ArrowLeft } from "lucide-react";
 
-const LAST_UPDATED = "April 28, 2026";
+const LAST_UPDATED = "May 6, 2026";
 const CONTACT_EMAIL = "xaviercamacho@atxdoesai.com";
 
 const Privacy = () => {
@@ -106,13 +106,26 @@ const Privacy = () => {
                 <li><span className="font-medium">Legal:</span> when required by law, subpoena, or to protect rights and safety.</li>
                 <li><span className="font-medium">Business transfers:</span> in connection with a merger, acquisition, or sale of assets, with notice to you.</li>
               </ul>
-              <p className="mt-6 text-sm text-muted-foreground border-l-2 border-primary/20 pl-4 py-1">
-                No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. All the categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+            </section>
+
+            <section>
+              <h2 className="font-serif text-2xl text-foreground mb-3">7. SMS / Text Messaging Privacy</h2>
+              <p>
+                When you opt in to receive SMS messages from ATXDOES AI, we
+                collect your mobile phone number and consent timestamp. We use
+                this information solely to send you the messages you have opted
+                in to receive (account, onboarding, and service updates). Mobile
+                opt-in information and phone numbers will not be shared with or
+                sold to third parties or affiliates for marketing purposes. We
+                may share data only with subprocessors required to deliver the
+                SMS service (e.g., Twilio), who are bound by contract to protect
+                it. You can revoke consent at any time by replying STOP to any
+                message.
               </p>
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">7. Data retention</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">8. Data retention</h2>
               <p>
                 We retain account and automation data while your account is
                 active. You can delete individual automations at any time from
@@ -123,7 +136,7 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">8. Your rights</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">9. Your rights</h2>
               <p>
                 Depending on where you live (including Texas residents under the
                 Texas Data Privacy and Security Act, and residents of other US
@@ -138,7 +151,7 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">9. Security</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">10. Security</h2>
               <p>
                 We use encryption in transit (TLS), encryption at rest for
                 sensitive fields, role-based access controls, and audit logs.
@@ -148,17 +161,17 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">10. Children</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">11. Children</h2>
               <p>The Service is built for business owners and is not directed to anyone under 18. We do not knowingly collect data from children.</p>
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">11. Changes</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">12. Changes</h2>
               <p>We may update this policy as the Service evolves. Material changes will be announced in the dashboard or by email at least 14 days before they take effect.</p>
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">12. Contact</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">13. Contact</h2>
               <p>
                 Questions, requests, or concerns? Email{" "}
                 <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">

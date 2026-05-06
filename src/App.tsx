@@ -16,6 +16,8 @@ import DashboardHelp from "./pages/DashboardHelp";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import SMSSignup from "./pages/SMSSignup";
+import SMSTerms from "./pages/SMSTerms";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +34,8 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/sms-signup" element={<SMSSignup />} />
+          <Route path="/sms-terms" element={<SMSTerms />} />
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<DashboardHome />} />
             <Route path="browse" element={<BrowseAll />} />

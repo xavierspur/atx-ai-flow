@@ -37,7 +37,7 @@ const Footer = () => {
           <div>
             <h4 className="font-body font-semibold uppercase tracking-[0.15em] text-foreground mb-4 text-xs">Company</h4>
             <ul className="space-y-2 font-body text-sm text-muted-foreground">
-              <li><a href="#" className="hover:text-foreground transition-colors">About</a></li>
+              <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Blog</a></li>
               <li><a href="#" className="hover:text-foreground transition-colors">Careers</a></li>
             </ul>
@@ -46,8 +46,8 @@ const Footer = () => {
             <h4 className="font-body font-semibold uppercase tracking-[0.15em] text-foreground mb-4 text-xs">Legal</h4>
             <ul className="space-y-2 font-body text-sm text-muted-foreground">
               <li><Link to="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/sms-terms" className="hover:text-foreground transition-colors">SMS Terms</Link></li>
-              <li><Link to="/sms-signup" className="hover:text-foreground transition-colors">SMS Signup</Link></li>
+              <li><Link to="/terms-and-conditions" className="hover:text-foreground transition-colors">Terms & Conditions</Link></li>
+              <li><Link to="/sms-terms" className="hover:text-foreground transition-colors">SMS Terms & Conditions</Link></li>
             </ul>
           </div>
         </div>

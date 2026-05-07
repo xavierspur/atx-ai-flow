@@ -112,18 +112,24 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">7. SMS / Text Messaging Privacy</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">7. SMS / Text Message Communications</h2>
               <p>
-                When you opt in to receive SMS messages from ATXDOES AI, we
-                collect your mobile phone number and consent timestamp. We use
-                this information solely to send you the messages you have opted
-                in to receive (account, onboarding, and service updates). Mobile
-                opt-in information and phone numbers will not be shared with or
-                sold to third parties or affiliates for marketing purposes. We
-                may share data only with subprocessors required to deliver the
-                SMS service (e.g., Twilio), who are bound by contract to protect
-                it. You can revoke consent at any time by replying STOP to any
-                message.
+                When you provide your mobile phone number to ATXDOES AI through our website contact form, consultation booking, or by texting us directly, you consent to receive SMS text messages from us related to your inquiry, scheduled consultations, service updates, customer care, and follow-up communications.
+              </p>
+              <p className="mt-3">
+                <span className="font-medium">Information We Collect:</span> We collect your name, mobile phone number, and the content of messages you send us. This information is used solely to communicate with you about ATXDOES AI services.
+              </p>
+              <p className="mt-3">
+                <span className="font-medium">How We Use Your Information:</span> Mobile phone numbers and SMS opt-in data are used only to send you the messages you have consented to receive. We use this information to confirm appointments, respond to inquiries, send service-related updates, and provide customer support.
+              </p>
+              <p className="mt-3">
+                <span className="font-medium">No Sharing of Mobile Information:</span> No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Information sharing to subcontractors in support services, such as customer service, is permitted. All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+              </p>
+              <p className="mt-3">
+                <span className="font-medium">Message Frequency and Rates:</span> Message frequency varies based on your interactions with us. Message and data rates may apply per your mobile carrier's plan. ATXDOES AI is not responsible for any carrier charges incurred.
+              </p>
+              <p className="mt-3">
+                <span className="font-medium">Opt-Out:</span> You may opt out of SMS communications at any time by replying STOP to any message. For help, reply HELP or contact us at <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">{CONTACT_EMAIL}</a>.
               </p>
             </section>
 

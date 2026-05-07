@@ -107,15 +107,22 @@ const Privacy = () => {
                 <li><span className="font-medium">Business transfers:</span> in connection with a merger, acquisition, or sale of assets, with notice to you.</li>
               </ul>
               <p className="mt-4 text-sm font-medium italic text-muted-foreground">
-                Note: Mobile phone numbers and SMS opt-in data are governed by Section 7 below and are never shared with third parties or affiliates for marketing purposes, regardless of the categories listed above.
+                Note: No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
               </p>
             </section>
 
             <section>
               <h2 className="font-serif text-2xl text-foreground mb-3">7. SMS / Text Messaging Privacy</h2>
               <p>
-                When you opt in to receive SMS messages from ATXDOES AI, we collect your mobile phone number, the timestamp of your consent, and a record of the consent method (web form or text-to-join). We use this information solely to send you the messages you have opted in to receive, including account, onboarding, and service updates.
+                When you opt in to receive SMS messages from ATXDOES AI, we collect your mobile phone number, the timestamp of your consent, and a record of how you opted in (web form, text-to-join, or during a conversation with us). We use this information solely to send you the messages you have opted in to receive, including:
               </p>
+              <ul className="list-disc pl-6 mt-3 space-y-1">
+                <li>Responses to inquiries you submit through our website</li>
+                <li>Consultation scheduling, confirmations, and reminders</li>
+                <li>Follow-up messages regarding our services and proposals</li>
+                <li>Onboarding messages and service updates if you become a client</li>
+                <li>Customer care and support communications</li>
+              </ul>
               <p className="mt-3">
                 <span className="font-medium">Message frequency:</span> Message frequency varies based on your interactions with ATXDOES AI.
               </p>

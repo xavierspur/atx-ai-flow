@@ -30,18 +30,16 @@ const SMSTerms = () => {
             Last updated: {LAST_UPDATED}
           </p>
           <p className="font-body text-sm font-semibold text-foreground mt-2">
-            Program Name: ATXDOES AI Account & Service Notifications
+            Program Name: ATXDOES AI Customer Care & Service Notifications
           </p>
 
           <div className="thin-rule my-12"></div>
 
           <div className="space-y-10 font-body text-base text-foreground/85 leading-relaxed max-w-3xl">
-
-
             <section>
               <h2 className="font-serif text-2xl text-foreground mb-3">Program Description</h2>
               <p>
-                By opting in, you agree to receive SMS text messages from ATXDOES AI. Messages may include consultation confirmations, appointment reminders, follow-ups regarding your inquiry, service updates, customer care responses, and onboarding information related to AI automation services you have requested.
+                ATXDOES AI sends SMS messages to prospective and existing clients who have opted in. Messages may include responses to inquiries submitted through our website, consultation scheduling and reminders, follow-up communications regarding our services and proposals, onboarding messages, service updates, and customer care.
               </p>
             </section>
 
@@ -51,8 +49,8 @@ const SMSTerms = () => {
                 You can opt in to receive SMS messages from ATXDOES AI by:
               </p>
               <ul className="list-disc pl-6 mt-3 space-y-2">
-                <li>Submitting the sign-up form on this page (atxdoesai.com/sms-terms) with your mobile phone number and checking the SMS consent box, or</li>
-                <li>Checking the SMS consent box during account creation or onboarding on atxdoesai.com, or</li>
+                <li>Submitting the contact or consultation form at <Link to="/" className="underline hover:text-primary transition-colors">https://www.atxdoesai.com/</Link> with your mobile phone number and checking the SMS consent box,</li>
+                <li>Submitting the SMS sign-up form on this page (<Link to="/sms-terms" className="underline hover:text-primary transition-colors">https://www.atxdoesai.com/sms-terms</Link>) with your mobile phone number and checking the SMS consent box, or</li>
                 <li>Texting START to our business number after an initial conversation.</li>
               </ul>
               <p className="mt-4 font-medium">
@@ -63,49 +61,49 @@ const SMSTerms = () => {
             <section>
               <h2 className="font-serif text-2xl text-foreground mb-3">Message Frequency</h2>
               <p>
-                Message frequency varies depending on your interactions with ATXDOES AI. You may receive up to 10 messages per month under typical use.
+                Message frequency varies based on your interactions with ATXDOES AI. Typical users receive 2–10 messages per month.
               </p>
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">Message and Data Rates</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">Cost</h2>
               <p>
-                Message and data rates may apply. Your mobile carrier may charge for sending or receiving text messages depending on your plan. ATXDOES AI does not charge for SMS messages, and we are not responsible for any charges from your wireless carrier.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">Help Instructions</h2>
-              <p>
-                Reply <strong>HELP</strong> for help, or email <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">{CONTACT_EMAIL}</a>. You will receive a reply with our support contact information.
+                Message and data rates may apply. ATXDOES AI does not charge for SMS messages, but standard carrier rates from your mobile provider apply.
               </p>
             </section>
 
             <section>
               <h2 className="font-serif text-2xl text-foreground mb-3">Opt-Out Instructions</h2>
               <p>
-                Reply <strong>STOP</strong> to any message to unsubscribe. You will receive one confirmation message and no further texts. If you wish to resume messages, reply START or sign up again through our website.
+                Reply <strong>STOP</strong> to any message to unsubscribe. You will receive one confirmation message and no further texts. To resume messages, reply START or sign up again.
               </p>
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">Carrier Disclaimer</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">Help Instructions</h2>
               <p>
-                Carriers are not liable for delayed or undelivered messages.
+                Reply <strong>HELP</strong> for help, or email <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">{CONTACT_EMAIL}</a>.
+              </p>
+            </section>
+
+            <section>
+              <h2 className="font-serif text-2xl text-foreground mb-3">Supported Carriers</h2>
+              <p>
+                Compatible with all major U.S. carriers (AT&T, Verizon, T-Mobile, and others). Carriers are not liable for delayed or undelivered messages.
               </p>
             </section>
 
             <section>
               <h2 className="font-serif text-2xl text-foreground mb-3">Privacy</h2>
               <p>
-                For information on how we handle your data, see our <Link to="/privacy-policy" className="underline hover:text-primary transition-colors">Privacy Policy</Link>. No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.
+                See our <Link to="/privacy-policy" className="underline hover:text-primary transition-colors">Privacy Policy</Link> for details on how we handle SMS data. No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.
               </p>
             </section>
 
             <section>
               <h2 className="font-serif text-2xl text-foreground mb-3">Contact</h2>
               <p>
-                ATXDOES AI · <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">{CONTACT_EMAIL}</a> · <Link to="/" className="underline hover:text-primary transition-colors">https://www.atxdoesai.com/</Link>
+                ATXDOES AI · Austin, Texas · <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">{CONTACT_EMAIL}</a> · +1 (210) 975-8369
               </p>
             </section>
           </div>

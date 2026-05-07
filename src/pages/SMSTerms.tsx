@@ -29,14 +29,14 @@ const SMSTerms = () => {
           <p className="font-body font-light text-base text-muted-foreground mt-6">
             Last updated: {LAST_UPDATED}
           </p>
+          <p className="font-body text-sm font-semibold text-foreground mt-2">
+            Program Name: ATXDOES AI Account & Service Notifications
+          </p>
 
           <div className="thin-rule my-12"></div>
 
           <div className="space-y-10 font-body text-base text-foreground/85 leading-relaxed max-w-3xl">
-            <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">Program Name</h2>
-              <p>ATXDOES AI Customer Care & Notifications</p>
-            </section>
+
 
             <section>
               <h2 className="font-serif text-2xl text-foreground mb-3">Program Description</h2>
@@ -48,7 +48,15 @@ const SMSTerms = () => {
             <section>
               <h2 className="font-serif text-2xl text-foreground mb-3">How to Opt In</h2>
               <p>
-                You can opt in to receive SMS messages by (1) submitting your phone number through the contact or consultation form at <Link to="/" className="underline hover:text-primary transition-colors">https://www.atxdoesai.com/</Link> and checking the SMS consent checkbox, or (2) texting START to our business number after an initial conversation.
+                You can opt in to receive SMS messages from ATXDOES AI by:
+              </p>
+              <ul className="list-disc pl-6 mt-3 space-y-2">
+                <li>Submitting the sign-up form on this page (atxdoesai.com/sms-terms) with your mobile phone number and checking the SMS consent box, or</li>
+                <li>Checking the SMS consent box during account creation or onboarding on atxdoesai.com, or</li>
+                <li>Texting START to our business number after an initial conversation.</li>
+              </ul>
+              <p className="mt-4 font-medium">
+                Consent to receive SMS is not a condition of purchase or use of the ATXDOES AI service.
               </p>
             </section>
 
@@ -67,16 +75,16 @@ const SMSTerms = () => {
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">HELP Instructions</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">Help Instructions</h2>
               <p>
-                For assistance at any time, reply HELP to any message you receive from us, or contact us directly at <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">{CONTACT_EMAIL}</a>. You will receive a reply with our support contact information.
+                Reply <strong>HELP</strong> for help, or email <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">{CONTACT_EMAIL}</a>. You will receive a reply with our support contact information.
               </p>
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">STOP Instructions</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">Opt-Out Instructions</h2>
               <p>
-                You can cancel SMS messages at any time by replying STOP to any message. After you send STOP, we will send a confirmation message and you will not receive any further SMS messages from us. If you wish to resume messages, reply START or sign up again through our website.
+                Reply <strong>STOP</strong> to any message to unsubscribe. You will receive one confirmation message and no further texts. If you wish to resume messages, reply START or sign up again through our website.
               </p>
             </section>
 
@@ -90,7 +98,7 @@ const SMSTerms = () => {
             <section>
               <h2 className="font-serif text-2xl text-foreground mb-3">Privacy</h2>
               <p>
-                For information on how we handle your data, see our <Link to="/privacy" className="underline hover:text-primary transition-colors">Privacy Policy</Link>. No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.
+                For information on how we handle your data, see our <Link to="/privacy-policy" className="underline hover:text-primary transition-colors">Privacy Policy</Link>. No mobile information will be shared with third parties or affiliates for marketing or promotional purposes.
               </p>
             </section>
 

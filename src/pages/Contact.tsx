@@ -133,8 +133,8 @@ const Contact = () => {
                     htmlFor="smsConsent"
                     className="text-sm font-normal leading-relaxed text-muted-foreground cursor-pointer"
                   >
-                    I agree to receive SMS text messages from ATXDOES AI regarding my inquiry, consultation scheduling, service updates, and customer care. Message and data rates may apply. Message frequency varies. Reply HELP for help or STOP to opt out at any time. See our{" "}
-                    <Link to="/privacy" className="underline hover:text-primary transition-colors">
+                    I agree to receive SMS text messages from ATXDOES AI regarding my inquiry, consultation scheduling, service updates, and customer care. Message and data rates may apply. Message frequency varies. Reply <strong>HELP</strong> for help or <strong>STOP</strong> to opt out at any time. See our{" "}
+                    <Link to="/privacy-policy" className="underline hover:text-primary transition-colors">
                       Privacy Policy
                     </Link>{" "}
                     and{" "}
@@ -204,8 +204,8 @@ const Contact = () => {
                     <ul className="space-y-1 list-disc pl-4">
                       <li>Message frequency varies.</li>
                       <li>Message and data rates may apply.</li>
-                      <li>Reply STOP to opt out at any time.</li>
-                      <li>Reply HELP for assistance.</li>
+                      <li>Reply <strong>STOP</strong> to opt out at any time.</li>
+                      <li>Reply <strong>HELP</strong> for assistance.</li>
                     </ul>
                     <p className="text-xs pt-2">
                       No mobile information will be shared with third parties for marketing purposes.

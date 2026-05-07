@@ -112,24 +112,24 @@ const Privacy = () => {
             </section>
 
             <section>
-              <h2 className="font-serif text-2xl text-foreground mb-3">7. SMS / Text Message Communications</h2>
+              <h2 className="font-serif text-2xl text-foreground mb-3">7. SMS / Text Messaging Privacy</h2>
               <p>
-                When you provide your mobile phone number to ATXDOES AI through our website contact form, consultation booking, or by texting us directly, you consent to receive SMS text messages from us related to your inquiry, scheduled consultations, service updates, customer care, and follow-up communications.
+                When you opt in to receive SMS messages from ATXDOES AI, we collect your mobile phone number, the timestamp of your consent, and a record of the consent method (web form or text-to-join). We use this information solely to send you the messages you have opted in to receive, including account, onboarding, and service updates.
               </p>
               <p className="mt-3">
-                <span className="font-medium">Information We Collect:</span> We collect your name, mobile phone number, and the content of messages you send us. This information is used solely to communicate with you about ATXDOES AI services.
+                <span className="font-medium">Message frequency:</span> Message frequency varies based on your interactions with ATXDOES AI.
               </p>
               <p className="mt-3">
-                <span className="font-medium">How We Use Your Information:</span> Mobile phone numbers and SMS opt-in data are used only to send you the messages you have consented to receive. We use this information to confirm appointments, respond to inquiries, send service-related updates, and provide customer support.
+                <span className="font-medium">Rates:</span> Message and data rates may apply per your mobile carrier's plan. ATXDOES AI does not charge for SMS messages.
               </p>
               <p className="mt-3">
-                <span className="font-medium">No Sharing of Mobile Information:</span> No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Information sharing to subcontractors in support services, such as customer service, is permitted. All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+                <span className="font-medium">Sharing:</span> No mobile information, including phone numbers and SMS opt-in data, will be shared with or sold to third parties or affiliates for marketing or promotional purposes. We share data only with subprocessors required to deliver the SMS service (e.g., Twilio), who are bound by contract to protect it.
               </p>
               <p className="mt-3">
-                <span className="font-medium">Message Frequency and Rates:</span> Message frequency varies based on your interactions with us. Message and data rates may apply per your mobile carrier's plan. ATXDOES AI is not responsible for any carrier charges incurred.
+                <span className="font-medium">Opt-out:</span> You can revoke consent at any time by replying STOP to any message. For help, reply HELP or contact us at <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">{CONTACT_EMAIL}</a>.
               </p>
               <p className="mt-3">
-                <span className="font-medium">Opt-Out:</span> You may opt out of SMS communications at any time by replying STOP to any message. For help, reply HELP or contact us at <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">{CONTACT_EMAIL}</a>.
+                <span className="font-medium">Full SMS Terms:</span> See our <Link to="/sms-terms" className="underline hover:text-primary transition-colors">SMS Terms & Conditions</Link> for the complete program description.
               </p>
             </section>
 
@@ -171,7 +171,9 @@ const Privacy = () => {
 
             <section>
               <h2 className="font-serif text-2xl text-foreground mb-3">11. Children</h2>
-              <p>The Service is built for business owners and is not directed to anyone under 18. We do not knowingly collect data from children.</p>
+              <p>
+                The Service is built for business owners and is not directed to children under 13. We do not knowingly collect data from children under 13. The SMS program is not directed to anyone under 18, and we do not knowingly collect mobile numbers from minors.
+              </p>
             </section>
 
             <section>

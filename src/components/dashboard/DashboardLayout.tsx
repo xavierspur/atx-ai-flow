@@ -11,6 +11,7 @@ import {
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 
 const navItems = [
   { label: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
@@ -25,20 +26,49 @@ const DashboardLayout = () => {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [user, setUser] = useState<{ name: string; email: string; businessName: string } | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const stored = localStorage.getItem("atxdoes_user");
-    if (!stored) {
-      navigate("/onboarding");
-      return;
-    }
-    setUser(JSON.parse(stored));
+    const loadProfile = async (userId: string, email: string) => {
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("name, business_name")
+        .eq("user_id", userId)
+        .maybeSingle();
+
+      setUser({
+        name: profile?.name || email.split("@")[0],
+        email,
+        businessName: profile?.business_name || "",
+      });
+      setLoading(false);
+    };
+
+    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (!session) {
+        setUser(null);
+        navigate("/login");
+        return;
+      }
+      loadProfile(session.user.id, session.user.email || "");
+    });
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      if (!session) {
+        navigate("/login");
+        setLoading(false);
+        return;
+      }
+      loadProfile(session.user.id, session.user.email || "");
+    });
+
+    return () => sub.subscription.unsubscribe();
   }, [navigate]);
 
-  if (!user) return null;
+  if (loading || !user) return null;
 
-  const handleLogout = () => {
-    localStorage.removeItem("atxdoes_user");
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
     localStorage.removeItem("atxdoes_onboarding");
     navigate("/");
   };

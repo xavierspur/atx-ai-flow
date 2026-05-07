@@ -80,14 +80,54 @@ const Onboarding = () => {
 
   const handleSubmit = async () => {
     setLoading(true);
+    try {
+      const { data: signUpData, error } = await supabase.auth.signUp({
+        email: data.email,
+        password: data.password,
+        options: {
+          emailRedirectTo: `${window.location.origin}/dashboard`,
+          data: {
+            name: data.fullName,
+            full_name: data.fullName,
+            business_name: data.businessName,
+          },
+        },
+      });
+      if (error) throw error;
+
+      // Save onboarding answers locally for dashboard recommendations
+      localStorage.setItem("atxdoes_onboarding", JSON.stringify(data));
+
+      // Update profile with business details (trigger only sets name/email)
+      if (signUpData.user) {
+        await supabase.from("profiles").update({
+          business_name: data.businessName,
+          name: data.fullName,
+        }).eq("user_id", signUpData.user.id);
+      }
+
+      toast({ title: "Account created", description: "Check your inbox to confirm your email." });
+      navigate("/dashboard");
+    } catch (err: any) {
+      toast({ title: "Sign up failed", description: err.message, variant: "destructive" });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleGoogleSignup = async () => {
     localStorage.setItem("atxdoes_onboarding", JSON.stringify(data));
-    localStorage.setItem(
-      "atxdoes_user",
-      JSON.stringify({ name: data.fullName, email: data.email, businessName: data.businessName }),
-    );
-    await new Promise((r) => setTimeout(r, 2500));
+    const result = await lovable.auth.signInWithOAuth("google", {
+      redirect_uri: window.location.origin + "/dashboard",
+    });
+    if (result.error) {
+      toast({ title: "Google sign-up failed", description: result.error.message, variant: "destructive" });
+      return;
+    }
+    if (result.redirected) return;
     navigate("/dashboard");
   };
+
 
   const ctaLabel =
     step === 1 ? "Find my pain points"

@@ -135,11 +135,19 @@ const Onboarding = () => {
         toast({ title: "Account created", description: "Welcome aboard! Your dashboard is ready." });
         navigate("/dashboard");
       } else {
-        toast({ 
-          title: "Verify your email", 
-          description: "We've sent a link to your email. Please confirm it to access your dashboard.",
+        // Try manual sign in if session was missing
+        const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+            email: data.email,
+            password: data.password,
         });
-        navigate("/login");
+
+        if (!signInError && signInData.session) {
+            toast({ title: "Account created", description: "Welcome aboard!" });
+            navigate("/dashboard");
+        } else {
+            toast({ title: "Account created", description: "Success! Please log in to continue." });
+            navigate("/login");
+        }
       }
     } catch (err: any) {
       toast({ title: "Sign up failed", description: err.message, variant: "destructive" });

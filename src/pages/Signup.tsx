@@ -54,15 +54,20 @@ const Signup = () => {
         description: "Welcome aboard! You can now access your dashboard.",
       });
 
-      // Redirect to dashboard ONLY if we have a session
-      if (data.session) {
-          navigate("/dashboard");
-      } else {
-          toast({
-            title: "Check your email",
-            description: "We've sent a verification link. Please confirm your email to log in.",
+      // If no session returned, try to sign in manually immediately
+      if (!data.session) {
+          const { data: signInData, error: signInError } = await supabase.auth.signInWithPassword({
+              email: formData.email,
+              password: formData.password,
           });
-          navigate("/login");
+          
+          if (!signInError && signInData.session) {
+              toast({ title: "Account created", description: "Welcome aboard!" });
+              navigate("/dashboard");
+          } else {
+              toast({ title: "Account created", description: "Success! Please log in to continue." });
+              navigate("/login");
+          }
       }
 
     } catch (error: any) {

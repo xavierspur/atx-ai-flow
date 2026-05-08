@@ -51,7 +51,7 @@ const Signup = () => {
 
       toast({
         title: "Account created!",
-        description: "Please check your email to verify your account.",
+        description: "Welcome aboard! You can now access your dashboard.",
       });
 
       // Redirect to dashboard or a "check email" page

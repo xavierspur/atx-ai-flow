@@ -103,6 +103,7 @@ const Onboarding = () => {
           business_name: data.businessName,
           industry: data.industry,
           city: data.city,
+          website_url: data.websiteUrl,
           needs: data.needs,
           team_size: data.teamSize,
           revenue_range: data.revenueRange,
@@ -113,11 +114,20 @@ const Onboarding = () => {
       // Save onboarding answers locally for dashboard recommendations
       localStorage.setItem("atxdoes_onboarding", JSON.stringify(data));
 
-      // Update profile with business details (trigger only sets name/email)
+      // Update profile with all onboarding details
       if (signUpData.user) {
         await supabase.from("profiles").update({
           business_name: data.businessName,
           name: data.fullName,
+          industry: data.industry,
+          city: data.city,
+          website_url: data.websiteUrl,
+          onboarding_completed: true,
+          onboarding_data: {
+            needs: data.needs,
+            team_size: data.teamSize,
+            revenue_range: data.revenueRange
+          }
         }).eq("user_id", signUpData.user.id);
       }
 

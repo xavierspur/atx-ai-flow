@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
+import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
 const SMSSignup = () => {
@@ -28,24 +29,22 @@ const SMSSignup = () => {
 
     setIsSubmitting(true);
     
-    // Simulate server-side capture of IP and timestamp
-    const dummySubmission = {
-      ...formData,
-      consent_given: formData.consent,
-      consent_timestamp: new Date().toISOString(),
-      ip_address: "127.0.0.1", // In reality, captured on server
-      user_agent: navigator.userAgent,
-    };
+    try {
+      const { error } = await supabase.from("leads").insert({
+        full_name: formData.fullName,
+        email: formData.email,
+        phone: formData.phone,
+        status: "sms_subscribed",
+        metadata: {
+          consent_given: formData.consent,
+          consent_timestamp: new Date().toISOString(),
+          user_agent: navigator.userAgent,
+          source: "sms_signup_page"
+        }
+      });
 
-    console.log("Simulating server-side submission:", dummySubmission);
-    
-    // Simulate API call delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    // In a real scenario, this would be an API response check
-    const isSuccess = true; 
+      if (error) throw error;
 
-    if (isSuccess) {
       toast.success(
         "Thanks! You're subscribed. You'll receive a confirmation text shortly. Reply STOP at any time to unsubscribe.",
         { duration: 6000 }
@@ -57,8 +56,8 @@ const SMSSignup = () => {
         phone: "",
         consent: false,
       });
-    } else {
-      toast.error("Something went wrong. Please try again.");
+    } catch (error: any) {
+      toast.error("Something went wrong: " + error.message);
     }
     
     setIsSubmitting(false);

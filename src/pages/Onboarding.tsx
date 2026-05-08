@@ -131,8 +131,16 @@ const Onboarding = () => {
         }).eq("user_id", signUpData.user.id);
       }
 
-      toast({ title: "Account created", description: "Welcome aboard! Your dashboard is ready." });
-      navigate("/dashboard");
+      if (signUpData.session) {
+        toast({ title: "Account created", description: "Welcome aboard! Your dashboard is ready." });
+        navigate("/dashboard");
+      } else {
+        toast({ 
+          title: "Verify your email", 
+          description: "We've sent a link to your email. Please confirm it to access your dashboard.",
+        });
+        navigate("/login");
+      }
     } catch (err: any) {
       toast({ title: "Sign up failed", description: err.message, variant: "destructive" });
     } finally {

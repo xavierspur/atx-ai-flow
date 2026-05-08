@@ -54,9 +54,15 @@ const Signup = () => {
         description: "Welcome aboard! You can now access your dashboard.",
       });
 
-      // Redirect to dashboard or a "check email" page
-      if (data.user) {
+      // Redirect to dashboard ONLY if we have a session
+      if (data.session) {
           navigate("/dashboard");
+      } else {
+          toast({
+            title: "Check your email",
+            description: "We've sent a verification link. Please confirm your email to log in.",
+          });
+          navigate("/login");
       }
 
     } catch (error: any) {

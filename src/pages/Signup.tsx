@@ -24,15 +24,17 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      // 1. Store in leads table
-      const { error: leadError } = await supabase.from("leads").insert({
-        email: formData.email,
-        full_name: formData.fullName,
-        status: "signed_up",
-        metadata: { source: "signup_page" }
-      });
-
-      if (leadError) console.error("Lead storage error:", leadError);
+      // 1. Store in leads table (Non-blocking)
+      try {
+        await supabase.from("leads").insert({
+          email: formData.email,
+          full_name: formData.fullName,
+          status: "signed_up",
+          metadata: { source: "signup_page" }
+        });
+      } catch (e) {
+        console.error("Lead storage failed:", e);
+      }
 
       // 2. Auth signup
       const { data, error: authError } = await supabase.auth.signUp({

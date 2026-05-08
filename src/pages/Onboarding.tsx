@@ -94,22 +94,26 @@ const Onboarding = () => {
       });
       if (error) throw error;
       
-      // Store in leads table
-      await supabase.from("leads").insert({
-        email: data.email,
-        full_name: data.fullName,
-        status: "onboarded",
-        metadata: {
-          business_name: data.businessName,
-          industry: data.industry,
-          city: data.city,
-          website_url: data.websiteUrl,
-          needs: data.needs,
-          team_size: data.teamSize,
-          revenue_range: data.revenueRange,
-          source: "onboarding_flow"
-        }
-      });
+      // Store in leads table (Non-blocking)
+      try {
+        await supabase.from("leads").insert({
+          email: data.email,
+          full_name: data.fullName,
+          status: "onboarded",
+          metadata: {
+            business_name: data.businessName,
+            industry: data.industry,
+            city: data.city,
+            website_url: data.websiteUrl,
+            needs: data.needs,
+            team_size: data.teamSize,
+            revenue_range: data.revenueRange,
+            source: "onboarding_flow"
+          }
+        });
+      } catch (e) {
+        console.error("Lead storage failed:", e);
+      }
 
       // Save onboarding answers locally for dashboard recommendations
       localStorage.setItem("atxdoes_onboarding", JSON.stringify(data));

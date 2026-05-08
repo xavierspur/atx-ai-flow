@@ -44,23 +44,39 @@ const DashboardLayout = () => {
       setLoading(false);
     };
 
-    const { data: sub } = supabase.auth.onAuthStateChange((_event, session) => {
-      if (!session) {
+    const { data: sub } = supabase.auth.onAuthStateChange((event, session) => {
+      console.log("Auth state change:", event, !!session);
+      if (event === "SIGNED_OUT" || (!session && !loading)) {
         setUser(null);
         navigate("/login");
-        return;
+      } else if (session) {
+        loadProfile(session.user.id, session.user.email || "");
       }
-      loadProfile(session.user.id, session.user.email || "");
     });
 
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (!session) {
-        navigate("/login");
+    const initSession = async () => {
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        if (!session) {
+          // Add a tiny delay to be sure it's not a race condition
+          await new Promise(resolve => setTimeout(resolve, 500));
+          const { data: { session: retrySession } } = await supabase.auth.getSession();
+          if (!retrySession) {
+            navigate("/login");
+            setLoading(false);
+            return;
+          }
+          loadProfile(retrySession.user.id, retrySession.user.email || "");
+        } else {
+          loadProfile(session.user.id, session.user.email || "");
+        }
+      } catch (error) {
+        console.error("Session init error:", error);
         setLoading(false);
-        return;
       }
-      loadProfile(session.user.id, session.user.email || "");
-    });
+    };
+
+    initSession();
 
     return () => sub.subscription.unsubscribe();
   }, [navigate]);

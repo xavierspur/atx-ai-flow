@@ -1,7 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import prerender from "vite-plugin-prerender";
+import prerender from "@prerenderer/rollup-plugin";
+import puppeteer from "@prerenderer/renderer-puppeteer";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -27,6 +28,7 @@ export default defineConfig(({ mode }) => ({
         "/signup",
         "/login"
       ],
+      renderer: new puppeteer(),
     }),
   ],
   resolve: {

@@ -55,6 +55,7 @@ const Onboarding = () => {
     revenueRange: "",
     fullName: "",
     email: "",
+    phone: "",
     password: "",
   });
 
@@ -72,7 +73,7 @@ const Onboarding = () => {
       case 1: return data.businessName && data.industry && data.city;
       case 2: return data.needs.length > 0;
       case 3: return data.teamSize && data.revenueRange;
-      case 4: return data.fullName && data.email && data.password.length >= 6;
+      case 4: return data.fullName && data.email && data.phone && data.password.length >= 6;
       default: return false;
     }
   };
@@ -89,6 +90,7 @@ const Onboarding = () => {
             name: data.fullName,
             full_name: data.fullName,
             business_name: data.businessName,
+            phone: data.phone,
           },
         },
       });
@@ -99,6 +101,7 @@ const Onboarding = () => {
         await supabase.from("leads").insert({
           email: data.email,
           full_name: data.fullName,
+          phone: data.phone,
           status: "onboarded",
           metadata: {
             business_name: data.businessName,
@@ -123,6 +126,7 @@ const Onboarding = () => {
         await supabase.from("profiles").update({
           business_name: data.businessName,
           name: data.fullName,
+          phone: data.phone,
           industry: data.industry,
           city: data.city,
           website_url: data.websiteUrl,
@@ -374,6 +378,10 @@ const Onboarding = () => {
                     <div>
                       <FieldLabel htmlFor="email">Email</FieldLabel>
                       <Input id="email" type="email" placeholder="john@acmecorp.com" value={data.email} onChange={(e) => update({ email: e.target.value })} className={editorialInputClass} />
+                    </div>
+                    <div>
+                      <FieldLabel htmlFor="phone">Phone Number</FieldLabel>
+                      <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" value={data.phone} onChange={(e) => update({ phone: e.target.value })} className={editorialInputClass} />
                     </div>
                     <div>
                       <FieldLabel htmlFor="password">Password (min 6 characters)</FieldLabel>

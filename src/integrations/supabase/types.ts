@@ -26,6 +26,7 @@ export type Database = {
           name: string | null
           onboarding_completed: boolean | null
           onboarding_data: Json | null
+          phone: string | null
           updated_at: string
           user_id: string
           website_url: string | null
@@ -41,6 +42,7 @@ export type Database = {
           name?: string | null
           onboarding_completed?: boolean | null
           onboarding_data?: Json | null
+          phone?: string | null
           updated_at?: string
           user_id: string
           website_url?: string | null
@@ -56,6 +58,7 @@ export type Database = {
           name?: string | null
           onboarding_completed?: boolean | null
           onboarding_data?: Json | null
+          phone?: string | null
           updated_at?: string
           user_id?: string
           website_url?: string | null

@@ -8,6 +8,7 @@ export interface OnboardingData {
   revenueRange: string;
   fullName: string;
   email: string;
+  phone: string;
   password: string;
 }
 

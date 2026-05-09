@@ -14,6 +14,7 @@ const Signup = () => {
   const [formData, setFormData] = useState({
     fullName: searchParams.get("full_name") || "",
     email: searchParams.get("email") || "",
+    phone: searchParams.get("phone") || "",
     password: searchParams.get("password") || "",
   });
   
@@ -29,6 +30,7 @@ const Signup = () => {
         await supabase.from("leads").insert({
           email: formData.email,
           full_name: formData.fullName,
+          phone: formData.phone,
           status: "signed_up",
           metadata: { source: "signup_page" }
         });
@@ -44,12 +46,20 @@ const Signup = () => {
           data: {
             full_name: formData.fullName,
             name: formData.fullName,
+            phone: formData.phone,
           },
           emailRedirectTo: `${window.location.origin}/dashboard`,
         },
       });
 
       if (authError) throw authError;
+
+      // Update profile with phone
+      if (data.user) {
+        await supabase.from("profiles").update({
+          phone: formData.phone,
+        }).eq("user_id", data.user.id);
+      }
 
       toast({
         title: "Account created!",
@@ -70,6 +80,8 @@ const Signup = () => {
               toast({ title: "Account created", description: "Success! Please log in to continue." });
               navigate("/login");
           }
+      } else {
+          navigate("/dashboard");
       }
 
     } catch (error: any) {
@@ -120,6 +132,19 @@ const Signup = () => {
                 placeholder="carl@example.com"
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                className="bg-white/5 border-white/10 text-white h-12 focus:ring-primary focus:border-primary transition-all"
+                required
+              />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="phone" className="text-sm font-medium text-white/70">Phone Number</Label>
+              <Input
+                id="phone"
+                type="tel"
+                placeholder="+1 (555) 000-0000"
+                value={formData.phone}
+                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 className="bg-white/5 border-white/10 text-white h-12 focus:ring-primary focus:border-primary transition-all"
                 required
               />

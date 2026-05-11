@@ -138,7 +138,9 @@ const SMSSignup = () => {
                   htmlFor="consent"
                   className="text-sm font-normal leading-relaxed text-muted-foreground cursor-pointer"
                 >
-                  I agree to receive SMS messages from ATXDOES AI regarding my inquiry, consultation scheduling, follow-ups, service updates, and customer care at the number provided. Message frequency varies. Message and data rates may apply. Reply <strong>HELP</strong> for help, <strong>STOP</strong> to unsubscribe. View our <Link to="/privacy-policy" className="underline hover:text-primary transition-colors">Privacy Policy</Link> and <Link to="/sms-terms" className="underline hover:text-primary transition-colors">SMS Terms</Link>.
+                  I agree to receive SMS messages from ATXDOES AI regarding consultations, follow-ups, service updates, and customer care at the number provided. Message frequency varies. Msg &amp; data rates may apply. Reply <strong>HELP</strong> for help, <strong>STOP</strong> to cancel. View our{" "}
+                  <Link to="/privacy-policy" className="underline hover:text-primary transition-colors">Privacy Policy</Link>{" "}and{" "}
+                  <Link to="/sms-terms" className="underline hover:text-primary transition-colors">SMS Terms</Link>.
                 </Label>
               </div>
 

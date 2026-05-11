@@ -49,8 +49,8 @@ const SMSTerms = () => {
                 You can opt in to receive SMS messages from ATXDOES AI by:
               </p>
               <ul className="list-disc pl-6 mt-3 space-y-2">
-                <li>Submitting the contact or consultation form at <Link to="/" className="underline hover:text-primary transition-colors">https://www.atxdoesai.com/</Link> with your mobile phone number and checking the SMS consent box,</li>
-                <li>Submitting the SMS sign-up form on this page (<Link to="/sms-terms" className="underline hover:text-primary transition-colors">https://www.atxdoesai.com/sms-terms</Link>) with your mobile phone number and checking the SMS consent box, or</li>
+                <li>Submitting the contact form at <Link to="/contact" className="underline hover:text-primary transition-colors">https://www.atxdoesai.com/contact</Link> with your mobile phone number and checking the SMS consent box,</li>
+                <li>Submitting the dedicated SMS sign-up form at <Link to="/sms-signup" className="underline hover:text-primary transition-colors">https://www.atxdoesai.com/sms-signup</Link> with your mobile phone number and checking the SMS consent box, or</li>
                 <li>Texting START to our business number after an initial conversation.</li>
               </ul>
               <p className="mt-4 font-medium">

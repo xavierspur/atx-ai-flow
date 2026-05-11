@@ -106,8 +106,8 @@ const Privacy = () => {
                 <li><span className="font-medium">Legal:</span> when required by law, subpoena, or to protect rights and safety.</li>
                 <li><span className="font-medium">Business transfers:</span> in connection with a merger, acquisition, or sale of assets, with notice to you.</li>
               </ul>
-              <p className="mt-4 text-sm font-medium italic text-muted-foreground">
-                Note: No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. All the above categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
+              <p className="mt-4 text-sm font-medium text-foreground border-l-4 border-primary pl-4 py-2 bg-primary/5">
+                No mobile information will be shared with third parties or affiliates for marketing or promotional purposes. Information sharing to subcontractors in support of our services is permitted. All other use case categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.
               </p>
             </section>
 

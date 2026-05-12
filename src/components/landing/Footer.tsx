@@ -13,18 +13,23 @@ const Footer = () => {
             <p className="font-body text-sm text-muted-foreground leading-relaxed mt-3">
               AI-powered automation for Texas businesses. Set it up once — let it run.
             </p>
-            <a
-              href="mailto:xaviercamacho@atxdoesai.com"
-              className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors mt-3 inline-block"
-            >
-              xaviercamacho@atxdoesai.com
-            </a>
-            <a
-              href="tel:+12109758369"
-              className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors mt-1 block"
-            >
-              +1 (210) 975-8369
-            </a>
+            <div className="mt-4 space-y-1">
+              <a
+                href="mailto:xaviercamacho@atxdoesai.com"
+                className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors block"
+              >
+                xaviercamacho@atxdoesai.com
+              </a>
+              <a
+                href="tel:+12109758369"
+                className="font-body text-sm text-muted-foreground hover:text-foreground transition-colors block"
+              >
+                +1 (210) 975-8369
+              </a>
+              <p className="font-body text-sm text-muted-foreground">
+                Austin, Texas 78701
+              </p>
+            </div>
           </div>
           <div>
             <h4 className="font-body font-semibold uppercase tracking-[0.15em] text-foreground mb-4 text-xs">Product</h4>
@@ -38,23 +43,27 @@ const Footer = () => {
             <h4 className="font-body font-semibold uppercase tracking-[0.15em] text-foreground mb-4 text-xs">Company</h4>
             <ul className="space-y-2 font-body text-sm text-muted-foreground">
               <li><Link to="/contact" className="hover:text-foreground transition-colors">Contact</Link></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Blog</a></li>
-              <li><a href="#" className="hover:text-foreground transition-colors">Careers</a></li>
+              <li><Link to="/sms-signup" className="hover:text-foreground transition-colors">SMS Updates</Link></li>
             </ul>
           </div>
           <div>
             <h4 className="font-body font-semibold uppercase tracking-[0.15em] text-foreground mb-4 text-xs">Legal</h4>
             <ul className="space-y-2 font-body text-sm text-muted-foreground">
               <li><Link to="/privacy-policy" className="hover:text-foreground transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms-and-conditions" className="hover:text-foreground transition-colors">Terms & Conditions</Link></li>
-              <li><Link to="/sms-terms" className="hover:text-foreground transition-colors">SMS Terms & Conditions</Link></li>
+              <li><Link to="/terms-and-conditions" className="hover:text-foreground transition-colors">Terms &amp; Conditions</Link></li>
+              <li><Link to="/sms-terms" className="hover:text-foreground transition-colors">SMS Terms</Link></li>
             </ul>
           </div>
         </div>
         <div className="thin-rule mt-12"></div>
-        <p className="mt-8 text-center font-body text-xs text-muted-foreground">
-          © {new Date().getFullYear()} ATXDOES AI. All rights reserved.
-        </p>
+        <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <p className="font-body text-xs text-muted-foreground">
+            © {new Date().getFullYear()} ATXDOES AI. All rights reserved. Austin, TX 78701.
+          </p>
+          <p className="font-body text-xs text-muted-foreground">
+            SMS: Reply <strong>STOP</strong> to cancel · <strong>HELP</strong> for help
+          </p>
+        </div>
       </div>
     </footer>
   );

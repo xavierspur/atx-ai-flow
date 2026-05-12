@@ -3,7 +3,7 @@ import Navbar from "@/components/landing/Navbar";
 import Footer from "@/components/landing/Footer";
 import { ArrowLeft } from "lucide-react";
 
-const LAST_UPDATED = "May 6, 2026";
+const LAST_UPDATED = "May 12, 2026";
 const CONTACT_EMAIL = "xaviercamacho@atxdoesai.com";
 
 const Privacy = () => {
@@ -27,7 +27,7 @@ const Privacy = () => {
             Privacy policy
           </h1>
           <p className="font-body font-light text-base text-muted-foreground mt-6">
-            Last updated: {LAST_UPDATED}
+            Effective date: {LAST_UPDATED}
           </p>
 
           <div className="thin-rule my-12"></div>
@@ -41,6 +41,15 @@ const Privacy = () => {
                 your inbox, and your operations. This page explains, in plain
                 English, what we collect and what we do with it.
               </p>
+              <div className="mt-6 p-5 bg-muted border border-foreground/5 font-body text-sm text-muted-foreground space-y-1">
+                <p className="font-semibold text-foreground text-xs uppercase tracking-wider mb-2">Business Identity</p>
+                <p><span className="font-medium text-foreground">Business:</span> ATXDOES AI</p>
+                <p><span className="font-medium text-foreground">Founder:</span> Xavier Camacho</p>
+                <p><span className="font-medium text-foreground">Address:</span> Austin, Texas 78701</p>
+                <p><span className="font-medium text-foreground">Email:</span> <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-primary transition-colors">{CONTACT_EMAIL}</a></p>
+                <p><span className="font-medium text-foreground">Phone:</span> +1 (210) 975-8369</p>
+                <p><span className="font-medium text-foreground">Website:</span> https://www.atxdoesai.com</p>
+              </div>
             </section>
 
             <section>
